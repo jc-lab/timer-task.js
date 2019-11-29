@@ -1,0 +1,25 @@
+{
+  "name": "timer-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "timer"
+  ],
+  "author": {
+    "name": "Joseph Lee",
+    "email": "development@jc-lab.net"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "tsc": "^1.20150623.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  }
+}

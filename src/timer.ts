@@ -94,7 +94,7 @@ class Timer {
         const taskCtx = storeTaskContext(this._tasks, {
             id: 0,
             state: TaskState.FIRST_DELAY,
-            fixedDelay: false,
+            fixedDelay: true,
             delay: delay,
             period: period,
             task: task,
@@ -108,7 +108,7 @@ class Timer {
         const taskCtx = storeTaskContext(this._tasks, {
             id: 0,
             state: TaskState.FIRST_DELAY,
-            fixedDelay: true,
+            fixedDelay: false,
             delay: delay,
             period: period,
             task: task,

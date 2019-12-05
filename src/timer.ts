@@ -10,6 +10,7 @@ enum TaskState {
 }
 
 interface ITaskContext {
+    alive: boolean;
     id: number;
     state: TaskState;
     task: TimerTask;
@@ -61,6 +62,8 @@ class Timer {
     }
 
     private _nextFixedDelayTask(taskCtx: ITaskContext) {
+        if (!taskCtx.alive)
+            return ;
         taskCtx.timerId = setTimeout(async () => {
             let err;
             try {
@@ -92,6 +95,7 @@ class Timer {
 
     schedule(task: TimerTask, delay: number, period?: number): TaskId {
         const taskCtx = storeTaskContext(this._tasks, {
+            alive: true,
             id: 0,
             state: TaskState.FIRST_DELAY,
             fixedDelay: true,
@@ -106,6 +110,7 @@ class Timer {
 
     scheduleAtFixedRate(task: TimerTask, delay: number, period?: number): TaskId {
         const taskCtx = storeTaskContext(this._tasks, {
+            alive: true,
             id: 0,
             state: TaskState.FIRST_DELAY,
             fixedDelay: false,
@@ -119,6 +124,7 @@ class Timer {
     }
 
     _stopTask(taskCtx: ITaskContext) {
+        taskCtx.alive = false;
         if (taskCtx.state == TaskState.FIRST_DELAY) {
             clearTimeout(taskCtx.timerId);
         }else{

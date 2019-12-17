@@ -17,11 +17,17 @@
     "name": "Joseph Lee",
     "email": "development@jc-lab.net"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jc-lab/timer-task.js.git"
+  },
   "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jc-lab/timer-task.js/issues"
+  },
   "devDependencies": {
     "@types/node": "^12.12.14",
     "tsc": "^1.20150623.0",
-    "tslib": "^1.10.0",
     "typescript": "^3.5.3"
   }
 }

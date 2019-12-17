@@ -72,7 +72,7 @@ class Timer {
                 this._errorHandler(e);
             }
             this._nextFixedDelayTask(taskCtx);
-        }, taskCtx.period);
+        }, taskCtx.period as number);
     }
 
     private _startSchedule(taskCtx: ITaskContext) {
